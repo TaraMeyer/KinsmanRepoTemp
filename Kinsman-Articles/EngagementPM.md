@@ -7,6 +7,8 @@ keywords: Spec
 
 ## Summary
 
+Change 1
+
 This document captures my learning and questions as I onboard to the new process. I will flush out the job and identify questions that need answering in this document.  
 
 ### High Level Job Description
