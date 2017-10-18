@@ -12,17 +12,19 @@ This document captures my learning and questions as I onboard to the new process
 ### High Level Job Description
 
 - maintain relationship with Azure team (Carol Zumault and Tyson)
-    - Help Azure documentation team with process they want to enable to allow appropriate level of collaboration for the business
-        - 200 internal contributors, thousands of pull requests.  Azure has a small team to manage lots of contributions and so they want particular functionality that helps them manage that workload, parsing out various specific authoring capabilites to their contributors along with some automation.   
+    - Tyson and Carol being happy means everything is good.  They own the documentation experience for Azure, which is super duper important to the company.  People need to know how to use Azure and that is their job.
+    - Help Azure documentation team with process they want to enable to allow appropriate level of collaboration between authors and contributors.
+    - Look through the CSI Repo to figure out 
+        - 200 internal contributors, thousands of pull requests.  Azure has a small team to manage lots of contributions and so they want particular functionality that helps them manage that workload, parsing out various specific authoring capabilites to their contributors along with some automation.
     
 - Help keep Windows documentation publishing going fowrard through vendor management.  weekly reporting and meetings with vendor to check in and review status, see where help is needed, etc.
 
-- Become completely ingrained with documentation migration processes
+- Become completely ingrained with documentation migration processes via OPS onboarding guide and the 
 
 #### In Scope
 
 *What items are in scope for this role?*
-- Maintaining the presence of docsets in the onboarding Area Path in mseng.visualstudio.com/CSI that are in Windows and Azure (https://mseng.visualstudio.com/CSI/_queries/query/3c45d380-9fe3-4fd3-90e9-6a994e1b703a/)  Currently assigned to Paulina and Sanketh.
+- Maintaining status of docsets in the onboarding Area Path in mseng.visualstudio.com/CSI that are in Windows and Azure (https://mseng.visualstudio.com/CSI/_queries/query/3c45d380-9fe3-4fd3-90e9-6a994e1b703a/)  Currently assigned to Paulina and Sanketh.
 
 - Helping reference documentation publishing automation, debugging problems with the automation.  
 - working with authors to assist their publishing of updated docsets for Conceptual documentation
@@ -61,10 +63,11 @@ TBD
 
 ### Dependencies, Terms and Definitions
 
-Two types of content:
-- Reference and Conceptual.  
-    Reference is automatically generated using scripts and automation that has been created by the engineering team.  There is a different process for each language, and our ability to support documentation in this language is dependant on a relatively heavy engineering lift to support the documentation.  
-    Conceptual
+**Reference vs. Conceptual** 
+- **Reference** is automatically generated using scripts and automation that has been created by the engineering team.  There is a different process for each language, and our ability to support documentation in this language is dependant on a relatively heavy engineering lift to support the documentation.  
+- **Conceptual** hand created content
+
+
 
 Types of pages 
     - Hub page...?
@@ -91,8 +94,13 @@ PubDesk
     - Vendor managed.  They merge changes from the master branch to the live branch when it is publishing time.  Azure does this at 10am and 3pm weekdays.
 
 
-OPS vs MTPS
+**OPS and its relationship with GitHub**
 - OPS is a publishing system that provides several important values.  See https://opsdocs.azurewebsites.net/en-us/opsdocs/whyops?branch=master.  The 
+
+**GitHub**
+
+**Private Repos vs. Public Repos**
+
 
 ## Business Impact
 
@@ -103,23 +111,58 @@ OPS vs MTPS
 Carol and Tyson stay Happy
 More docs migrate to Docs.
 
-### Competitive/Internal Product Landscape
+### Partners
 
-*Outline how the problem is managed by our competitors or other products.* 
+### Team Members
 
-## Proposal
+### Organization and Organization Dynamics
 
-### User Stories
+- Jeff Sandquist the GM
+    - Carol and Tyson
+    - Duncan
+    - Dan
+        - Jennifer
+            - Sanketh/Mike - Azure
+            - Sandra - Office
+            - Paulina - Windows
+            - James - VS
+            - Sudeep - PowerBI and some other shit
+            - Khairun Jamal - Dynamics but also does SEO milestone on tick-tocks
+        - Mei
+            - MVP shite
+        - Rob
+        - Adam - He helped us when my build on OPS died
+        - Yun lu - lives in china.  Owns the processes/whatever that generate documeantion from Pyton, CLI and some othe rstuff I can't read.  THere is a list that I saw that one time that describes this. 
+        - Den Delimarche - lives in Moldova, which is next to Ukraine.  OWns the processes that generate doucmentation for .net, typescript and nodejs.
 
-*Outline of the key user stories that cover this feature.*
 
-### Options and Tradeoffs
+    - Arthur Yas
+        - Jonathan Duncan (JD)
 
-*Provide the various options that are evaluated to meet the above objective and the tradeoffs between those solutions.*
 
-### User Experience
+### Proposal - Docs.microsoft.com sell proposal
 
-*Detailed user workflows, UX mockups, design comps, ideas, etc.*
+### Daily responsibilities
+
+What we do each day
+
+What we do each week
+
+### Decision points 
+
+*this section will describe when there are tradeoffs to be made throughout the day or week and why we might break one way or another in the decision*
+
+- How many docsets in a Repo
+- 
+
+### Questions?
+
+Who owns features in OPS?
+- Rob
+
+- What is the difference between "Provisioning" and "Publishing"?
+- "Provisioning" means that we have *not only* created the Repo for the docset, but the repo has been prepared with the right metadata and files that help us with documentation presentation, particularly the open publishing json file and the docfx json file
+
 
 ### Feature Design
 
@@ -128,9 +171,17 @@ More docs migrate to Docs.
 > [!Note]
 > This should not include specific implementation details.
 
-### Telemetry
+### Telemetry & SkyEye
 
-*Plan what data should be collected on feature use and what types of intelligence we want to gain from the process.*
+We use  SkyEye for telemetry, and to provide reporting to the docmentation teams for how their docs are being used by the public. find out more at http://skyeye
+
+## Github basics
+use git bash, not git for windows.
+
+- Git Clone < insert url > - make a local copy of something on github
+
+Fork.  A fork is a personal fork of a repo.   I can work off my personal fork of the repo to make local changes in a series of commits, then push. 
+
 
 ### Communication and Training Plan
 
@@ -203,18 +254,20 @@ Azure_Docs_PR
 
 
 
-Azure_Docs
+Hello All,
 
-Duncan has
-    - Operations
-    publihsing - Ke
-            Andy
+Please find some useful links related to onboarding:
 
-            publishing Master to Live
+One note with Tick tock – please remember we have 3 tick tock templates depending on the scenario:
+Tick-Tock Checklist MTPS, CAPS, SMS or New Content to Docs (Template)  (Web view)
 
-Gauntlet
+Info about reference:
+https://msdnstage.redmond.corp.microsoft.com/en-us/ce-csi-docs/azureref/onboarding%20ref%20for%20pms?branch=master 
 
-Repo    option 1                Repo
-    Docset 1
+Ops Partner documentation:
+https://opsdocs.azurewebsites.net/en-us/opsdocs/?branch=master 
 
-    docset 2
+query:
+https://mseng.visualstudio.com/CSI/Onboarding/_queries/query/3c45d380-9fe3-4fd3-90e9-6a994e1b703a/ 
+
+Thank you!
