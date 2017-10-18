@@ -26,17 +26,34 @@ This document captures my learning and questions as I onboard to the new process
 *What items are in scope for this role?*
 - Maintaining status of docsets in the onboarding Area Path in mseng.visualstudio.com/CSI that are in Windows and Azure (https://mseng.visualstudio.com/CSI/_queries/query/3c45d380-9fe3-4fd3-90e9-6a994e1b703a/)  Currently assigned to Paulina and Sanketh.
 
-- Helping reference documentation publishing automation, debugging problems with the automation.  
-- working with authors to assist their publishing of updated docsets for Conceptual documentation
-- working with Tyson to flesh out and understand features for Azure documentation contributors and reviewers
-- making sure new documentation releases stay on the radar
+- Helping reference documentation publishing automation, debugging problems with the automation - possibly not doing this because I'm not yet picking that up.
+- Working with authors to assist their publishing of updated docsets for Conceptual documentation
+- Working with Tyson to flesh out and understand features for Azure documentation contributors and reviewers
+- Making sure new documentation releases stay on the radar and are logged in CSI/Onboarding
 - Making sure redirection is implemented appropriately for items migrated from older publishing systems to docs.microsoft.com
+- How can we automate this process further?
 
-- other things Dan wants me to do, coming tomorrow
+#### Basic pipeline
 
-#### Out Of Scope
+1. caps
+2. export to markdown using the exporter tool
+3. dumped to a destinatio (repo)
 
-TBD
+    If Existing
+    4. Clean up the dump, test it, verify it, etc.
+    5. Push to master, then make live
+
+    if New
+    4. Follow the onboarding guide for all the stuff needed done
+    5. end up with a master branch with the good stuff in it
+    6. push it to the live branch
+    7. take the highway to the danger zone and make it live
+
+    8. redirections
+
+#### Redirections
+
+What I know so far about redirections is that you can use the CAPS exporter tool to publish redirections through MTPS.  There is a guy we give the redirections file to and he can update the MTPS database to publish the redirections into MTPS/the old MSDN library
 
 ### Customers and Stakeholders
 
@@ -66,8 +83,6 @@ TBD
 **Reference vs. Conceptual** 
 - **Reference** is automatically generated using scripts and automation that has been created by the engineering team.  There is a different process for each language, and our ability to support documentation in this language is dependant on a relatively heavy engineering lift to support the documentation.  
 - **Conceptual** hand created content
-
-
 
 Types of pages 
     - Hub page...?
@@ -100,6 +115,9 @@ PubDesk
 **GitHub**
 
 **Private Repos vs. Public Repos**
+
+**CAPS**
+
 
 
 ## Business Impact
@@ -182,40 +200,22 @@ use git bash, not git for windows.
 
 Fork.  A fork is a personal fork of a repo.   I can work off my personal fork of the repo to make local changes in a series of commits, then push. 
 
+- git add -A - Add all my changes.  THis is not just used when adding a file, its also used when changes are made
+- git commit -m"notes" this commits changes to the local repo
+- git push - this pushes my changes up to github to the repo I'm working on
+
+After a git push, you can go check the status in github.  
+
+Creating a pull request.  when I want to commit changes to the main repo master branch from my fork I create a pull request.  When I submit the pull request, github kicks off some processing steps taht are specific to Microsoft
+- OpenPublishing.build - this makes sure that we pass OPS checks
+- CELA check - some nominal legal check.  When these checks are complete I can merge them.
+
 
 ### Communication and Training Plan
 
 *Some features require alerting the leadership team and writers. This would prepare parties for upcoming features, announcements about shipped features, information on any breaking changes, deprecated features or features that require an explicit content rebuild step.*
 
-## Contacts
-
-*List of stakeholders that agree with the content of this proposal and believe that this Project is ready to start, such as:*
-
-* APEX PM
-* APEX dev
-* Business SMEs/stakeholders
-
-## Appendix
-
-### References
-
-*A list of related references that will aid in understanding the goals of this feature.*
-
-## Signoff
-
-### Exit Criteria
-
-*A list of expected behaviors, or pass/fail conditions, for all the user stories.* 
-
-* Front End (Docs)  
-  *For any user stories impacting docs page template, UI, and UX.*
-
-* Back End (OPS)  
-  *For any user stories impacting OPS, build, and publishing.*
-
-* Content Validation  
-  *For any content publishing associated with the feature release. Provide docset name, or published URL, if possible.*
-
+## chicken scratch below
 
 
 Me:
