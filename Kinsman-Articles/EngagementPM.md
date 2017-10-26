@@ -5,32 +5,35 @@ keywords: Spec
 ---
 # Onboarding PM for Azure and Windows
 
-testing upstreamsx
-
 ## Summary
 
-Change 1
-
-This document captures my learning and questions as I onboard to the new process. I will flush out the job and identify questions that need answering in this document.  
+This document captures my learning and questions as I onboard to the new process. I will flush out the job and identify questions that need answering in this document.
 
 ### High Level Job Description
 
-- maintain relationship with Azure team (Carol Zumault and Tyson)
-    - Tyson and Carol being happy means everything is good.  They own the documentation experience for Azure, which is super duper important to the company.  People need to know how to use Azure and that is their job.
-    - Help Azure documentation team with process they want to enable to allow appropriate level of collaboration between authors and contributors.
-    - Look through the CSI Repo to figure out 
+- Maintain relationship with Azure team (Carol Zumault and Tyson and Kris Crider)
+    - They own the documentation experience for Azure, which is super duper important to the company.  People need to know how to use Azure and that is their job.
+    - They faciliate releases across Carol's larger team and coordinate releases for larger events.  Kris needs to know that Duncan isn't going to mess everything up with Docs leading up to a big release.
+    - Tyson needs to know _how_ to incorporate new features across his team.  Example:  The breadcrumbs automation feature was released, but there wasn't any onboarding guidance developed.  Tyson doesn't know how to roll it out across the team. 
+    - Coordinate Ship Room meetings?    
+        - Next event: Connect on November 15th.
+    - Kris Crider is the Project Manager of sorts for the organization, and is leading the weekly shiproom release coordination meeting across the authors and documentation teams under Carol.
+
+- Help Azure Documentation team's needs get prioritized in Dan's backlog.
         - 200 internal contributors, thousands of pull requests.  Azure has a small team to manage lots of contributions and so they want particular functionality that helps them manage that workload, parsing out various specific authoring capabilites to their contributors along with some automation.
     
-- Help keep Windows documentation publishing going fowrard through vendor management.  weekly reporting and meetings with vendor to check in and review status, see where help is needed, etc.
+- Help keep Windows documentation publishing going fowrard through vendor management.  Weekly reporting and meetings with vendor to check in and review status, see where help is needed, etc.
 
-- Become completely ingrained with documentation migration processes via OPS onboarding guide and the 
+- Become ingrained with documentation migration processes via OPS onboarding guide and other documentation
+
+- Maintain releases assigned to me in the Onboarding area path.  This includes updating the release date information and assigned iterations.
 
 #### In Scope
 
 *What items are in scope for this role?*
-- Maintaining status of docsets in the onboarding Area Path in mseng.visualstudio.com/CSI that are in Windows and Azure (https://mseng.visualstudio.com/CSI/_queries/query/3c45d380-9fe3-4fd3-90e9-6a994e1b703a/)  Currently assigned to Paulina and Sanketh.
+- Maintaining status of docsets in the onboarding Area Path in mseng.visualstudio.com/CSI that are in Windows and Azure (https://mseng.visualstudio.com/CSI/_queries/query/3c45d380-9fe3-4fd3-90e9-6a994e1b703a/) and others as they are assigned.
 
-- Helping reference documentation publishing automation, debugging problems with the automation - possibly not doing this because I'm not yet picking that up.
+- Helping reference documentation publishing automation, debugging problems with the automation.
 - Working with authors to assist their publishing of updated docsets for Conceptual documentation
 - Working with Tyson to flesh out and understand features for Azure documentation contributors and reviewers
 - Making sure new documentation releases stay on the radar and are logged in CSI/Onboarding
@@ -57,18 +60,19 @@ This document captures my learning and questions as I onboard to the new process
 
 #### Redirections
 
-What I know so far about redirections is that you can use the CAPS exporter tool to publish redirections through MTPS.  There is a guy we give the redirections file to and he can update the MTPS database to publish the redirections into MTPS/the old MSDN library
+What I know so far about redirections is that you can use the CAPS exporter tool to publish redirections through MTPS.  There is a guy we give the redirections file to and he can update the MTPS database to publish the redirections into MTPS/the old MSDN library.  This is for reference content. 
 
 ### Customers and Stakeholders
 
-- Tyson and Carol Zumalt
-    - Azure Documentation Folks.  largest Customer for Jennifer
+- Tyson and Carol Zumalt and Kris Crider
+    - Azure Documentation Folks.  Largest Customer for Jennifer
 
 - Tara
-    - Vendor who will be assigned to WDG documentation
+    - Vendor who will be assigned to WDG documentation.  WDG means Windows. 
 
 - PubDesk
-    - Vendor that sanketh says we can use for large batch processing and ad hoc requests
+    - Vendor that Sanketh says we can use for large batch processing and ad hoc requests.  
+    - Question: How do I log something to PubDesk?
 
 - Beyondsoft
     - Development vendor, mostly for devs
@@ -80,17 +84,23 @@ What I know so far about redirections is that you can use the CAPS exporter tool
 *Identify the customers and stakeholders who will be impacted by this change.*
 
 - China Team
-    - They do the automation to support generating reference documentation from the languages.  Current languages are here: 
+    - They do the automation to support generating reference documentation from the languages.  Current languages are here: https://opsdocs.azurewebsites.net/en-us/opsdocs/reference/?branch=master
+        - 
 
 ### Dependencies, Terms and Definitions
 
 **Reference vs. Conceptual** 
 - **Reference** is automatically generated using scripts and automation that has been created by the engineering team.  There is a different process for each language, and our ability to support documentation in this language is dependant on a relatively heavy engineering lift to support the documentation.  
-- **Conceptual** hand created content
 
-Types of pages 
+Doc with example on how to onboard Reference documentation in a particular language (REST is the example): https://github.com/MicrosoftDocs/openpublishing-docs/blob/master/openpublishing/docs/reference/rest/howto-onboard-rest-project.md 
+
+
+- **Conceptual** hand created content, and this means samples, how-tos, quick start guides, and other things that authors actually write.  
+
+**Types of pages** 
     - Hub page...?
-    - others...?
+    - Landing Page...?
+    - Question: When is the edit button not visible?
 
 **Automation**
  - DocFX - a docfx.json file lets us set metadata about a docset and specify which files in a repro are to be included or excluded from the build.  This is part of the automation that creates reference documentation
@@ -114,17 +124,50 @@ PubDesk
 
 
 **OPS and its relationship with GitHub**
-- OPS is a publishing system that provides several important values.  See https://opsdocs.azurewebsites.net/en-us/opsdocs/whyops?branch=master.  The 
+- OPS is a publishing system that provides several important values.  See https://opsdocs.azurewebsites.net/en-us/opsdocs/whyops?branch=master.  
+
+The basic situation here is that OPS is *ours* and GitHub provides the repos and storage and infrastrucutre on which we build the documentation experience and publishing experience.  OPS says "We show what you see in the live branch", but GitHub provides the live branch and any other branches that we want.
+
+More specifically, you can think of 4 different systems:
+- OPS the platform
+    - OPS does a lot of the heavy lifting to determine what is ready for publishing.  There are several validating steps that the OPS portal provides to validate links, make sure the TOC appers, and several other things I dont know about yet.
+    - OPS stays in sync with GitHub.  If I do something in a tracked repo in github, github will call OPS to do some validation on my push, and then github will tell me how it goes.
+- OPS the portal
+    - The OPS portal is the tool front end to the OPS system.   You can create new repos in github using OPS.
+- GitHub
+    - Github provides the repos and branching system and everything all about git.  As stated above, github and OPS communicate with eachother in various scenarios.
+- Docs.microsoft.com UI
+    - The DOCS UI is the customer facing front end for OPS.  It proviedes the preview expeirence, on review.docs.microsoft.com and the production experience on docs.microsoft.com.  Review.docs.microsoft.com is where changes can be seen for github.
+![alt text](OPS-Github.jpg "Whiteboard shot of Github & OPS")
+
 
 **GitHub**
+See above.
 
-Upstreams
+**Upstreams**
+What is an upstream and how does it work.  An upstream is a reference branch to 
 
 **Private Repos vs. Public Repos**
 
+**Swagger**
+This is something for reference documentation.  They generate a swagger file or files and then the swagger provides the instructinos to our automation to generate the appropriate yaml documentation. 
+
+**Monikerize**
+Monikerize means add versioning to the reference documentation.  If a thing has a moniker, that moniker denotes the version that it is.   
+
+
 **CAPS**
+CAPS is an old reference documentation system. 
+
+**AppVeyor**
+
+process that generates yaml from Swagger.   h  Swagger is the format or system that our code authors must use so we can generate documenation from their code automatically, particularly the API calls.  AppVeyor only works for certain languages. 
 
 
+**F1 Metadata**
+- Dude when you press F1 in Visual Studio, you can search.  F1 help topics are things that show up in teh help documentation
+
+**
 
 ## Business Impact
 
@@ -133,7 +176,7 @@ Upstreams
 *What metrics identify the success of this change? Provide the baseline value against the identified metrics.*
 
 Carol and Tyson stay Happy
-More docs migrate to Docs.
+More docs migrate to Docs, and more docs leave MTPS.
 
 ### Partners
 
@@ -148,29 +191,37 @@ More docs migrate to Docs.
         - Jennifer
             - Sanketh/Mike - Azure
             - Sandra - Office
-            - Paulina - Windows
+            - Paulina/Tara - Windows
             - James - VS
             - Sudeep - PowerBI and some other shit
             - Khairun Jamal - Dynamics but also does SEO milestone on tick-tocks
         - Mei
-            - MVP shite
+            - MVP stuff
         - Rob
-        - Adam - He helped us when my build on OPS died
+            - Rob owns the PM stuff for the docs UI.  
+        - Adam 
+            - He helped us when my build on OPS died.  Not sure what he owns.
+            - Matt Sampson
         - Yun lu - lives in china.  Owns the processes/whatever that generate documeantion from Pyton, CLI and some othe rstuff I can't read.  THere is a list that I saw that one time that describes this. 
         - Den Delimarche - lives in Moldova, which is next to Ukraine.  OWns the processes that generate doucmentation for .net, typescript and nodejs.
+        - ke xu
+            - Ke does some important stuff but I dont know right now.
 
 
-    - Arthur Yas
-        - Jonathan Duncan (JD)
+    - Arthur Yasinski
+        - Jonathan Duncan (JD)  - I forget.  Book a meet/greet.
 
 
-### Proposal - Docs.microsoft.com sell proposal
+### Proposal - Docs.microsoft.com 
+Why Docs?  https://review.docs.microsoft.com/en-us/help/onboard/docs-overview?branch=master.  COntent matters, and better content -> better adoption.  Docs is for public technical documentation for developers and engineers.  It is not for marketing content, and it is not for partner content.
 
 ### Daily responsibilities
 
 What we do each day
+- review assigned items in TFS and udpate as necessary
 
 What we do each week
+- review status 
 
 ### Decision points 
 
@@ -185,7 +236,7 @@ Who owns features in OPS?
 - Rob
 
 - What is the difference between "Provisioning" and "Publishing"?
-- "Provisioning" means that we have *not only* created the Repo for the docset, but the repo has been prepared with the right metadata and files that help us with documentation presentation, particularly the open publishing json file and the docfx json file
+- "Provisioning" means that we have *not only* created the Repo for the docset, but the repo has been prepared with the right metadata and files that help us with documentation presentation, particularly the open publishing json file and the docfx json file.   Provisioning means connecting OPS and GitHUb and getting that process going.  Publishing means moving content from the master to the live branch and click the "go live" link.
 
 
 ### Feature Design
@@ -202,19 +253,28 @@ We use  SkyEye for telemetry, and to provide reporting to the docmentation teams
 ## Github basics
 use git bash, not git for windows.
 
-- Git Clone < insert url > - make a local copy of something on github
+- `Git Clone < insert url >` - make a local copy of something on github
 
 Fork.  A fork is a personal fork of a repo.   I can work off my personal fork of the repo to make local changes in a series of commits, then push. 
 
-- git add -A - Add all my changes.  THis is not just used when adding a file, its also used when changes are made
-- git commit -m"notes" this commits changes to the local repo
-- git push - this pushes my changes up to github to the repo I'm working on
+- `git add -A` - Add all my changes.  THis is not just used when adding a file, its also used when changes are made
+- `git commit` -m"notes" this commits changes to the local repo
+- `git push` - this pushes my changes up to github to the repo I'm working on
 
 After a git push, you can go check the status in github.  
 
 Creating a pull request.  when I want to commit changes to the main repo master branch from my fork I create a pull request.  When I submit the pull request, github kicks off some processing steps taht are specific to Microsoft
 - OpenPublishing.build - this makes sure that we pass OPS checks
 - CELA check - some nominal legal check.  When these checks are complete I can merge them.
+
+- upstream.  When you fork your repo, you can set an upstream repository so changes to that upstream repository can be synced with your personal fork.
+    - `Git fetch upstream` 
+    - `Git merge upstream/master`  - merge upstream changes to my master branch
+    - then, all changes from upstream are incorporated, and my changes can be made as well.  To incorporate:
+    - `Git add -A`
+    - `Git commit -m"blah blah"`
+    - `Git push` 
+
 
 
 ### Communication and Training Plan
