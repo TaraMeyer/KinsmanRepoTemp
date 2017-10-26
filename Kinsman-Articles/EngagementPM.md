@@ -15,14 +15,15 @@ This document captures my learning and questions as I onboard to the new process
     - They own the documentation experience for Azure, which is super duper important to the company.  People need to know how to use Azure and that is their job.
     - They faciliate releases across Carol's larger team and coordinate releases for larger events.  Kris needs to know that Duncan isn't going to mess everything up with Docs leading up to a big release.
     - Tyson needs to know _how_ to incorporate new features across his team.  Example:  The breadcrumbs automation feature was released, but there wasn't any onboarding guidance developed.  Tyson doesn't know how to roll it out across the team. 
-    - Coordinate Ship Room meetings?    
+    - Coordinate Ship Room meetings?
         - Next event: Connect on November 15th.
+
     - Kris Crider is the Project Manager of sorts for the organization, and is leading the weekly shiproom release coordination meeting across the authors and documentation teams under Carol.
 
 - Help Azure Documentation team's needs get prioritized in Dan's backlog.
-        - 200 internal contributors, thousands of pull requests.  Azure has a small team to manage lots of contributions and so they want particular functionality that helps them manage that workload, parsing out various specific authoring capabilites to their contributors along with some automation.
+    - 200 internal contributors, thousands of pull requests.  Azure has a small team to manage lots of contributions and so they want particular functionality that helps them manage that workload, parsing out various specific authoring capabilites to their contributors along with some automation.
     
-- Help keep Windows documentation publishing going fowrard through vendor management.  Weekly reporting and meetings with vendor to check in and review status, see where help is needed, etc.
+- Help keep Windows documentation publishing going forward through vendor management.  Weekly reporting and meetings with vendor to check in and review status, see where help is needed, etc.
 
 - Become ingrained with documentation migration processes via OPS onboarding guide and other documentation
 
@@ -40,18 +41,20 @@ This document captures my learning and questions as I onboard to the new process
 - Making sure redirection is implemented appropriately for items migrated from older publishing systems to docs.microsoft.com
 - How can we automate this process further?
 
-#### Basic pipeline
+#### Basic pipeline for Migration
 
-1. caps
+1. Stuff is in CAPS
 2. export to markdown using the exporter tool
-3. dumped to a destinatio (repo)
+3. Dumped to a destination Repo 
 
-    If Existing
+    If its already in DOCS
+
     4. Clean up the dump, test it, verify it, etc.
     5. Push to master, then make live
 
     if New
-    4. Follow the onboarding guide for all the stuff needed done
+
+    4. Follow the tick tock guide for all the stuff needed done
     5. end up with a master branch with the good stuff in it
     6. push it to the live branch
     7. take the highway to the danger zone and make it live
@@ -60,7 +63,11 @@ This document captures my learning and questions as I onboard to the new process
 
 #### Redirections
 
-What I know so far about redirections is that you can use the CAPS exporter tool to publish redirections through MTPS.  There is a guy we give the redirections file to and he can update the MTPS database to publish the redirections into MTPS/the old MSDN library.  This is for reference content. 
+What I know so far about redirections is that you can use the CAPS exporter tool to publish redirections through MTPS.  There is a guy we give the redirections file to and he can update the MTPS database to publish the redirections into MTPS/the old MSDN library.  This is for reference content.
+
+Redirections are documented here: https://review.docs.microsoft.com/en-us/help/ops-crr/openpublishing/docs/partnerdocs/paveover-mtps-content?branch=master.  
+
+Side note: to find anything, pretty much always go to the onboarding guide and then search in the TOC for the thing you're looking for.  Good bet it shows up. 
 
 ### Customers and Stakeholders
 
@@ -84,7 +91,8 @@ What I know so far about redirections is that you can use the CAPS exporter tool
 *Identify the customers and stakeholders who will be impacted by this change.*
 
 - China Team
-    - They do the automation to support generating reference documentation from the languages.  Current languages are here: https://opsdocs.azurewebsites.net/en-us/opsdocs/reference/?branch=master
+
+    They do the automation to support generating reference documentation from the languages.  Current languages are here: https://opsdocs.azurewebsites.net/en-us/opsdocs/reference/?branch=master
         - 
 
 ### Dependencies, Terms and Definitions
@@ -92,7 +100,7 @@ What I know so far about redirections is that you can use the CAPS exporter tool
 **Reference vs. Conceptual** 
 - **Reference** is automatically generated using scripts and automation that has been created by the engineering team.  There is a different process for each language, and our ability to support documentation in this language is dependant on a relatively heavy engineering lift to support the documentation.  
 
-Doc with example on how to onboard Reference documentation in a particular language (REST is the example): https://github.com/MicrosoftDocs/openpublishing-docs/blob/master/openpublishing/docs/reference/rest/howto-onboard-rest-project.md 
+    - Doc with example on how to onboard Reference documentation in a particular language (REST is the example): https://github.com/MicrosoftDocs/openpublishing-docs/blob/master/openpublishing/docs/reference/rest/howto-onboard-rest-project.md 
 
 
 - **Conceptual** hand created content, and this means samples, how-tos, quick start guides, and other things that authors actually write.  
@@ -142,12 +150,18 @@ More specifically, you can think of 4 different systems:
 
 
 **GitHub**
+
 See above.
 
 **Upstreams**
-What is an upstream and how does it work.  An upstream is a reference branch to 
+
+What is an upstream and how does it work.  An upstream is a reference repo for your fork repo.  When you fork you can set the usptream so you can incorporate updates to the master repo into your local fork.
 
 **Private Repos vs. Public Repos**
+
+Public repos can have pull requests submitted by the public.  The current thinking is that more pull requests is better because it invigorates and builds a relationship to the community, and the more eyes on the docuemntation the better.  
+
+Private repos are ones that only microsoft has access to.  For teams that have large documentation sets, they do work in a private repo, and accept pull requests into the public repo, and then maintain coordination between the two repos.
 
 **Swagger**
 This is something for reference documentation.  They generate a swagger file or files and then the swagger provides the instructinos to our automation to generate the appropriate yaml documentation. 
@@ -157,7 +171,8 @@ Monikerize means add versioning to the reference documentation.  If a thing has 
 
 
 **CAPS**
-CAPS is an old reference documentation system. 
+
+CAPS is an old reference documentation system.  Some things that are in MTPS were generated through CAPS.  
 
 **AppVeyor**
 
@@ -165,28 +180,28 @@ process that generates yaml from Swagger.   h  Swagger is the format or system t
 
 
 **F1 Metadata**
-- Dude when you press F1 in Visual Studio, you can search.  F1 help topics are things that show up in teh help documentation
+- When you press F1 in Visual Studio, you can search.  F1 help topics are things that show up in teh help documentation
 
-**
 
-## Business Impact
 
 ### Success Criteria
 
 *What metrics identify the success of this change? Provide the baseline value against the identified metrics.*
 
-Carol and Tyson stay Happy
-More docs migrate to Docs, and more docs leave MTPS.
-
-### Partners
+- Carol and Tyson stay Happy
+- More docs migrate to Docs, and more docs leave MTPS.
+- Azure docs migrate appropriately fast
+- LSIs are dealt with
+- 
 
 ### Team Members
 
 ### Organization and Organization Dynamics
 
 - Jeff Sandquist the GM
-    - Carol and Tyson
+    - Carol and Tyson and Kris
     - Duncan
+        - Sandesh - DevOps and LSIs
     - Dan
         - Jennifer
             - Sanketh/Mike - Azure
@@ -199,13 +214,13 @@ More docs migrate to Docs, and more docs leave MTPS.
             - MVP stuff
         - Rob
             - Rob owns the PM stuff for the docs UI.  
-        - Adam 
+    - Adam 
             - He helped us when my build on OPS died.  Not sure what he owns.
-            - Matt Sampson
-        - Yun lu - lives in china.  Owns the processes/whatever that generate documeantion from Pyton, CLI and some othe rstuff I can't read.  THere is a list that I saw that one time that describes this. 
-        - Den Delimarche - lives in Moldova, which is next to Ukraine.  OWns the processes that generate doucmentation for .net, typescript and nodejs.
-        - ke xu
-            - Ke does some important stuff but I dont know right now.
+    - Matt Sampson
+    - Yun lu - lives in china.  Owns the processes/whatever that generate documeantion from Pyton, CLI and some othe rstuff I can't read.  THere is a list that I saw that one time that describes this. 
+    - Den Delimarche - lives in Moldova, which is next to Ukraine.  OWns the processes that generate doucmentation for .net, typescript and nodejs.
+    - ke xu
+        - Ke does some important stuff but I dont know right now.
 
 
     - Arthur Yasinski
@@ -275,7 +290,7 @@ Creating a pull request.  when I want to commit changes to the main repo master 
     - `Git commit -m"blah blah"`
     - `Git push` 
 
-
+When creating a pull request, the base fork is always the "destination" for the changes
 
 ### Communication and Training Plan
 
