@@ -67,6 +67,8 @@ What I know so far about redirections is that you can use the CAPS exporter tool
 
 Redirections are documented here: https://review.docs.microsoft.com/en-us/help/ops-crr/openpublishing/docs/partnerdocs/paveover-mtps-content?branch=master.  
 
+Redirection request are submitted via the [Live Site](http://SiteHelp). Tag your submission as a [Redirection] request.
+
 Side note: to find anything, pretty much always go to the onboarding guide and then search in the TOC for the thing you're looking for.  Good bet it shows up. 
 
 ### Customers and Stakeholders
@@ -84,7 +86,7 @@ Side note: to find anything, pretty much always go to the onboarding guide and t
 - Beyondsoft
     - Development vendor, mostly for devs
 
-- Aquaint
+- Aquent
     - Tara works for them.
         - Run PubDesk & PRReview
 
@@ -108,7 +110,7 @@ Side note: to find anything, pretty much always go to the onboarding guide and t
 **Types of pages** 
     - Hub page...?
     - Landing Page...?
-    - Question: When is the edit button not visible?
+    - Question: When is the edit button not visible?  The edit button is not visible on repos that are private.  Private repos don't  allow contribution.
 
 **Automation**
  - DocFX - a docfx.json file lets us set metadata about a docset and specify which files in a repro are to be included or excluded from the build.  This is part of the automation that creates reference documentation
@@ -140,8 +142,8 @@ More specifically, you can think of 4 different systems:
 - OPS the platform
     - OPS does a lot of the heavy lifting to determine what is ready for publishing.  There are several validating steps that the OPS portal provides to validate links, make sure the TOC appers, and several other things I dont know about yet.
     - OPS stays in sync with GitHub.  If I do something in a tracked repo in github, github will call OPS to do some validation on my push, and then github will tell me how it goes.
-- OPS the portal
-    - The OPS portal is the tool front end to the OPS system.   You can create new repos in github using OPS.
+- [OPS the portal](https://ops.microsoft.com)
+    - The OPS portal is the tool front end to the OPS system.   You can create new repos in github using OPS and also monitor builds.  The output tab also provides the staging and live urls for newly created repos or updates made within.
 - GitHub
     - Github provides the repos and branching system and everything all about git.  As stated above, github and OPS communicate with eachother in various scenarios.
 - Docs.microsoft.com UI
@@ -159,7 +161,7 @@ What is an upstream and how does it work.  An upstream is a reference repo for y
 
 **Private Repos vs. Public Repos**
 
-Public repos can have pull requests submitted by the public.  The current thinking is that more pull requests is better because it invigorates and builds a relationship to the community, and the more eyes on the docuemntation the better.  
+Public repos can have pull requests submitted by the public.  The current thinking is that more pull requests is better because it invigorates and builds a relationship to the community, and the more eyes on the documentation the better.  
 
 Private repos are ones that only microsoft has access to.  For teams that have large documentation sets, they do work in a private repo, and accept pull requests into the public repo, and then maintain coordination between the two repos.
 
@@ -167,16 +169,16 @@ Private repos are ones that only microsoft has access to.  For teams that have l
 This is something for reference documentation.  They generate a swagger file or files and then the swagger provides the instructinos to our automation to generate the appropriate yaml documentation. 
 
 **Monikerize**
-Monikerize means add versioning to the reference documentation.  If a thing has a moniker, that moniker denotes the version that it is.   
+Monikerize means add versioning to the reference documentation.  If a thing has a moniker, that moniker denotes the version that it is. Monikers are created and maintained in the [OPS Portal](https://ops.microsoft.com).  
 
 
 **CAPS**
 
-CAPS is an old reference documentation system.  Some things that are in MTPS were generated through CAPS.  
+[CAPS](https://caps-web-prod.azurewebsites.net) is an old reference documentation system.  Some things that are in MTPS were generated through CAPS.  
 
 **AppVeyor**
 
-process that generates yaml from Swagger.   h  Swagger is the format or system that our code authors must use so we can generate documenation from their code automatically, particularly the API calls.  AppVeyor only works for certain languages. 
+[AppVeyor](https://www.appveyor.com/)is a continuous integration (CI) solution for Windows. It is used to automate much of the build processes and also generates yaml from Swagger.   Swagger is the format or system that our code authors must use so we can generate documentation from their code automatically, particularly the API calls.  AppVeyor only works for certain languages. 
 
 
 **F1 Metadata**
@@ -217,6 +219,7 @@ process that generates yaml from Swagger.   h  Swagger is the format or system t
     - Adam 
             - He helped us when my build on OPS died.  Not sure what he owns.
     - Matt Sampson
+      Own the PowerShell API browser.  When a new PowerShell doc set is added to docs, you must send a request to him to get it added to the [PowerShell Module Browser](https://docs.microsoft.com/en-us/powershell/module/)
     - Yun lu - lives in china.  Owns the processes/whatever that generate documeantion from Pyton, CLI and some othe rstuff I can't read.  THere is a list that I saw that one time that describes this. 
     - Den Delimarche - lives in Moldova, which is next to Ukraine.  OWns the processes that generate doucmentation for .net, typescript and nodejs.
     - ke xu
@@ -327,7 +330,7 @@ Azure_Docs_PR
     private repo
     PRReviewrTeam - Aquent
 
-    Publihsing Team - BeyondSoft - Andy Pasic  4 Dudes
+    Publishing Team - BeyondSoft - Andy Pasic  4 Dudes
 
     Andy's team 
 
